@@ -1,0 +1,79 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dM:/MASTERS/FPGA/FPGA_WS/ServoController/simulation
+vPWM_gen
+Z1 !s110 1551800785
+!i10b 1
+!s100 Ya0WVdi6<HkF_VbE_VF1@2
+Ic16<zoo9V7OhFUGjj5?EW2
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+R0
+Z3 w1551800687
+Z4 8M:/MASTERS/FPGA/FPGA_WS/ServoController/ServoController.v
+Z5 FM:/MASTERS/FPGA/FPGA_WS/ServoController/ServoController.v
+L0 34
+Z6 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z7 !s108 1551800785.000000
+Z8 !s107 M:/MASTERS/FPGA/FPGA_WS/ServoController/ServoController.v|
+Z9 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+M:/MASTERS/FPGA/FPGA_WS/ServoController|M:/MASTERS/FPGA/FPGA_WS/ServoController/ServoController.v|
+!i113 1
+Z10 o-vlog01compat -work work
+Z11 !s92 -vlog01compat -work work +incdir+M:/MASTERS/FPGA/FPGA_WS/ServoController
+Z12 tCvgOpt 0
+n@p@w@m_gen
+vServoController
+R1
+!i10b 1
+!s100 @oBAZQ:6V2>99l[53Am[O3
+In73kcm_;mbZ[:iP`7bJ;V3
+R2
+R0
+R3
+R4
+R5
+L0 1
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+R11
+R12
+n@servo@controller
+vServoController_tb
+!s110 1551800786
+!i10b 1
+!s100 SF2e>3:Po[2fHNM8F4Jhb2
+IVXOcLd:H6o5omS1UT^07?2
+R2
+R0
+w1551800761
+8M:/MASTERS/FPGA/FPGA_WS/ServoController/ServoControllerTB.v
+FM:/MASTERS/FPGA/FPGA_WS/ServoController/ServoControllerTB.v
+L0 6
+R6
+r1
+!s85 0
+31
+R7
+!s107 M:/MASTERS/FPGA/FPGA_WS/ServoController/ServoControllerTB.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+M:/MASTERS/FPGA/FPGA_WS/ServoController|M:/MASTERS/FPGA/FPGA_WS/ServoController/ServoControllerTB.v|
+!i113 1
+R10
+R11
+R12
+n@servo@controller_tb

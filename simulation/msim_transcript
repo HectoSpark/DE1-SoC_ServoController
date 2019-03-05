@@ -1,0 +1,190 @@
+# Reading C:/intelFPGA/17.1/modelsim_ase/tcl/vsim/pref.tcl
+# Reading M:/MASTERS/FPGA/FPGA_WS/ServoController/simulation/modelsim.tcl
+# do ServoController_run_msim_rtl_verilog.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 10.5b Lib Mapping Utility 2016.10 Oct  5 2016
+# vmap work rtl_work 
+# Copying C:/intelFPGA/17.1/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vlog -vlog01compat -work work +incdir+M:/MASTERS/FPGA/FPGA_WS/ServoController {M:/MASTERS/FPGA/FPGA_WS/ServoController/ServoController.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 15:46:25 on Mar 05,2019
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+M:/MASTERS/FPGA/FPGA_WS/ServoController" M:/MASTERS/FPGA/FPGA_WS/ServoController/ServoController.v 
+# -- Compiling module ServoController
+# -- Compiling module PWM_gen
+# 
+# Top level modules:
+# 	ServoController
+# End time: 15:46:25 on Mar 05,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vlog -vlog01compat -work work +incdir+M:/MASTERS/FPGA/FPGA_WS/ServoController {M:/MASTERS/FPGA/FPGA_WS/ServoController/ServoControllerTB.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 15:46:25 on Mar 05,2019
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+M:/MASTERS/FPGA/FPGA_WS/ServoController" M:/MASTERS/FPGA/FPGA_WS/ServoController/ServoControllerTB.v 
+# -- Compiling module ServoController_tb
+# 
+# Top level modules:
+# 	ServoController_tb
+# End time: 15:46:26 on Mar 05,2019, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# 
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs="+acc"  ServoController_tb
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs=""+acc"" ServoController_tb 
+# Start time: 15:46:27 on Mar 05,2019
+# Loading work.ServoController_tb
+# Loading work.ServoController
+# Loading work.PWM_gen
+# 
+# do M:/MASTERS/FPGA/FPGA_WS/ServoController/simulation/load_sim.tcl
+#
+# NativeLink Simulation Initialisation Script
+# ===========================================
+# By: Thomas Carpenter
+# Date: 31st December 2017
+# For: University of Leeds
+#
+# Description
+# ===========
+# This is a basic sample script for initialising a simulation
+#
+# All commands in this script will be executed, and comments will
+# be printed to the screen
+#
+# Most of the work in compiling is done by Quartus automatically.
+# Here we can add some extra commands.
+#
+# There is lots of stuff you can do, such as running initialisation
+# scripts, preparing memory contents, setting up the simulator.
+#
+# 
+#
+# First lets clean up any old NativeLink backup files. Quartus
+# creates a new backup file every time it runs. It never deletes
+# these files so you end up with an ever increasing number of them.
+#
+# The {*}[glob -nocomplain ... ] command performs wildcard matching
+# of filenames, to make sure we get all .bak files. The "-nocomplain"
+# and "catch {}" ensure that if no backups exist, there is no error.
+#
+# 
+# catch {file delete {*}[glob -nocomplain *_msim_rtl_verilog.do.bak*]}
+# 0
+# 
+#
+# This will continue executing our script if a break point in the
+# simulation is reached - for example the $stop command in Verilog
+#
+# 
+# onbreak {resume}
+# 
+# 
+# Once you add signals to the Wave view to see them graphically
+# and got them all set up to your liking (Radix, arrangement, etc.)
+# it is possible to save that layout as a "Waveform Format Do File".
+# From modelsim if you click on the Wave window and File->Save Format
+# this will generate the "Do" file for you.
+#
+# I will assume that you saved the file with name "wave.do" (default)
+# in the simulation folder (same place as this TCL).
+#
+# Each time we run the simulation, we can run this file to restore 
+# the setup:
+#
+#   do <filename>
+#
+# Of course the first time you run the simulation the file might not
+# yet exist - you might never choose to save a format. So we also
+# first check if the file exists before do-ing it.
+# 
+# 
+# We normalise the filename to prevent issues with spaces in the filename
+# set waveFile [file normalize "./wave.do"]
+# M:/MASTERS/FPGA/FPGA_WS/ServoController/simulation/wave.do
+# 
+# if { [file exists $waveFile] } {
+#     #If the saved file exists, load it
+#     do $waveFile
+# } else {
+#     #Otherwise simply add all signals in the testbench formatted as unsigned decimal.
+#     add wave -radix unsigned -position insertpoint sim:/*
+# }
+# onerror {resume}
+# quietly WaveActivateNextPane {} 0
+# add wave -noupdate /ServoController_tb/dut/clock
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: el15asjb  Hostname: EENTPC158  ProcessID: 5496
+#           Attempting to use alternate WLF file "./wlftk322n8".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlftk322n8
+# add wave -noupdate /ServoController_tb/dut/load
+# add wave -noupdate /ServoController_tb/dut/duty
+# add wave -noupdate /ServoController_tb/dut/counter
+# add wave -noupdate /ServoController_tb/dut/clockdiv
+# add wave -noupdate -divider {New Divider}
+# add wave -noupdate -radix unsigned /ServoController_tb/dut/pwmgen/clockdiv
+# add wave -noupdate -radix unsigned /ServoController_tb/dut/pwmgen/duty
+# add wave -noupdate -radix unsigned /ServoController_tb/dut/pwmgen/counter
+# add wave -noupdate -radix unsigned /ServoController_tb/dut/pwmgen/PWMOut
+# TreeUpdate [SetDefaultTree]
+# WaveRestoreCursors {{Cursor 1} {7772117 ps} 0} {{Cursor 2} {1004695431 ps} 0} {{Cursor 3} {0 ps} 0}
+# quietly wave cursor active 2
+# configure wave -namecolwidth 295
+# configure wave -valuecolwidth 100
+# configure wave -justifyvalue left
+# configure wave -signalnamewidth 0
+# configure wave -snapdistance 10
+# configure wave -datasetprefix 0
+# configure wave -rowmargin 4
+# configure wave -childrowmargin 2
+# configure wave -gridoffset 0
+# configure wave -gridperiod 1
+# configure wave -griddelta 40
+# configure wave -timeline 0
+# configure wave -timelineunits us
+# update
+# WaveRestoreZoom {411846349 ps} {1330159027 ps}
+# 
+#
+# Then we can configure the units for the timeline. Lets stick to
+# nanoseconds instead of the default of picoseconds.
+#
+# 
+# configure wave -timelineunits ns
+# 
+# 
+# Next we can start the simulation. We simply say "run".
+#
+# The "run" command can be followed by a time parameter, such as:
+#
+#     run 100ns     # Run for 100ns
+#     run -all      # Run until the testbench stops changing stimuli
+#     run 10        # Run for 10 "timesteps" (typically 1ps per step)
+#
+# ========== Simulation Starts Here ===========
+# 
+# run -all
+# 
+# ========== Simulation Ends Here ===========
+#
+# Once the simulation finishes we will reach here
+#
+# Let's for example zoom out in the wave display to fit all data
+#
+# 
+# wave zoom full
+# 0 ps
+# 29926029 ns
+restart; run 100ms
+run -continue
+run 100ms
+write format wave -window .main_pane.wave.interior.cs.body.pw.wf M:/MASTERS/FPGA/FPGA_WS/ServoController/simulation/wave.do
+add wave -position end  sim:/ServoController_tb/dut/load
+add wave -position end  sim:/ServoController_tb/dut/pwmgen/duty
+add wave -position end  sim:/ServoController_tb/dut/pwmgen/dutylatched
+restart; run 150ms
