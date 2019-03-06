@@ -1,11 +1,11 @@
-Analysis & Synthesis Status : Successful - Wed Mar 06 13:49:42 2019
+Analysis & Synthesis Status : Successful - Wed Mar 06 14:44:46 2019
 Quartus Prime Version : 17.1.1 Internal Build 593 12/11/2017 SJ Standard Edition
 Revision Name : ServoController
 Top-level Entity Name : ServoController
 Family : Cyclone V
 Logic utilization (in ALMs) : N/A
-Total registers : 59
-Total pins : 17
+Total registers : 63
+Total pins : 16
 Total virtual pins : 0
 Total block memory bits : 0
 Total DSP Blocks : 0

@@ -7,15 +7,17 @@ module ServoController_tb;
 
 	reg		 	CLOCK = 0;
 	reg  [7:0] 	duty = 8'h00;
-	reg  [3:0] 	latch = 0;
-	wire [3:0]	PWMOUT;
+	reg  [2:0]  channelselect = 2'b00;
+	reg  		 	latchbtn = 0;
+	wire [3:0]	PWMOut;
 	
 ServoController dut (
 
-	.clock		(CLOCK),
-	.duty			(duty),
-	.latch		(latch),
-	.PWMOut		(PWMOUT)
+	.clock					(CLOCK),
+	.channelselect			(channelselect),
+	.duty						(duty),
+	.latchbtn				(latchbtn),
+	.PWMOut					(PWMOut)
 );
 
 localparam freq = 10;
@@ -23,31 +25,34 @@ always #freq CLOCK = ~CLOCK;
 
 initial begin
 	CLOCK = 1'b0;
-	latch = 0;
+	latchbtn = 1;
 	
 	#30_000_000;
 	duty = 8'hFF;
-	latch[0] = 1;
-	latch[1] = 1;
-	latch[2] = 1;
-	latch[3] = 1;
+	channelselect = 2'b00;
+	latchbtn = 0;
 	@(posedge CLOCK);
-	latch[0] = 0;
-	latch[1] = 0;
-	latch[2] = 0;
-	latch[3] = 0;
+	latchbtn = 1;
 	#60_000_000;
-	duty = 8'h80;
-	latch[0] = 1;
-	latch[1] = 1;
-	latch[2] = 1;
-	latch[3] = 1;
+	channelselect = 2'b01;
+	latchbtn = 0;
 	@(posedge CLOCK);
-	latch[0] = 0;
-	latch[1] = 0;
-	latch[2] = 0;
-	latch[3] = 0;
-	
+	latchbtn = 1;
+	#90_000_000;
+	channelselect = 2'b10;
+	latchbtn = 0;
+	@(posedge CLOCK);
+	latchbtn = 1;
+	#120_000_000;
+	channelselect = 2'b11;
+	latchbtn = 0;
+	@(posedge CLOCK);
+	latchbtn = 1;
+	#160_000_000;
+	channelselect = 2'b11;
+	latchbtn = 0;
+	@(posedge CLOCK);
+	latchbtn = 1;
 	
 end
 

@@ -1,9 +1,7 @@
 |ServoController
 clock => clock.IN1
-latch[0] => latch[0].IN1
-latch[1] => latch[1].IN1
-latch[2] => latch[2].IN1
-latch[3] => latch[3].IN1
+channelselect[0] => Decoder0.IN1
+channelselect[1] => Decoder0.IN0
 duty[0] => duty[0].IN4
 duty[1] => duty[1].IN4
 duty[2] => duty[2].IN4
@@ -12,6 +10,10 @@ duty[4] => duty[4].IN4
 duty[5] => duty[5].IN4
 duty[6] => duty[6].IN4
 duty[7] => duty[7].IN4
+latchbtn => latch.DATAB
+latchbtn => latch.DATAB
+latchbtn => latch.DATAB
+latchbtn => latch.DATAB
 PWMOut[0] << PWM_gen:PWMGen_Loops[0].pwmgen.PWMOut
 PWMOut[1] << PWM_gen:PWMGen_Loops[1].pwmgen.PWMOut
 PWMOut[2] << PWM_gen:PWMGen_Loops[2].pwmgen.PWMOut

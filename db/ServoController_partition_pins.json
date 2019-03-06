@@ -24,10 +24,6 @@
 					"strict" : false
 				},
 				{
-					"name" : "latch[0]",
-					"strict" : false
-				},
-				{
 					"name" : "duty[7]",
 					"strict" : false
 				},
@@ -60,15 +56,15 @@
 					"strict" : false
 				},
 				{
-					"name" : "latch[1]",
+					"name" : "latchbtn",
 					"strict" : false
 				},
 				{
-					"name" : "latch[2]",
+					"name" : "channelselect[0]",
 					"strict" : false
 				},
 				{
-					"name" : "latch[3]",
+					"name" : "channelselect[1]",
 					"strict" : false
 				}
 			]
