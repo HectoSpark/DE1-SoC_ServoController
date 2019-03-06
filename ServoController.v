@@ -1,3 +1,4 @@
+/*--Top level module of servo controller--*/
 module ServoController # (
 	parameter channels = 4												//How many channels to generate
 ) (
@@ -22,8 +23,7 @@ module ServoController # (
 	clockDivider # (
 		.counterspeed(counterspeed) 									//counterspeed parameter to be passed to module for calculations
 	) clockdivider(
-		.clock				(clock),  									//Clock assignment for module
-		.counterspeedreg	(counterspeed),							//counterspeed to for module
+		.clock				(clock),  									//Clock assignment for module							//counterspeed to for module
 		.clockdivided		(clockdiv)									//the divided clock speed out
 	);
 	
