@@ -1,26 +1,45 @@
 |ServoController
 clock => clock.IN1
-load => load.IN1
-duty[0] => duty[0].IN1
-duty[1] => duty[1].IN1
-duty[2] => duty[2].IN1
-duty[3] => duty[3].IN1
-duty[4] => duty[4].IN1
-duty[5] => duty[5].IN1
-duty[6] => duty[6].IN1
-duty[7] => duty[7].IN1
-PWMOut <= PWM_gen:pwmgen.PWMOut
+load => PWM_gen:pwmgen.latch
+duty[0] => PWM_gen:pwmgen.duty[0]
+duty[1] => PWM_gen:pwmgen.duty[1]
+duty[2] => PWM_gen:pwmgen.duty[2]
+duty[3] => PWM_gen:pwmgen.duty[3]
+duty[4] => PWM_gen:pwmgen.duty[4]
+duty[5] => PWM_gen:pwmgen.duty[5]
+duty[6] => PWM_gen:pwmgen.duty[6]
+duty[7] => PWM_gen:pwmgen.duty[7]
+PWMOut << PWM_gen:pwmgen.PWMOut
+
+
+|ServoController|clockDivider:clockdivider
+clock => counter[0].CLK
+clock => counter[1].CLK
+clock => counter[2].CLK
+clock => counter[3].CLK
+clock => counter[4].CLK
+clock => counter[5].CLK
+clock => counter[6].CLK
+clock => counter[7].CLK
+clock => counter[8].CLK
+clock => counter[9].CLK
+counterspeedreg[0] => ~NO_FANOUT~
+counterspeedreg[1] => ~NO_FANOUT~
+counterspeedreg[2] => ~NO_FANOUT~
+counterspeedreg[3] => ~NO_FANOUT~
+counterspeedreg[4] => ~NO_FANOUT~
+counterspeedreg[5] => ~NO_FANOUT~
+counterspeedreg[6] => ~NO_FANOUT~
+counterspeedreg[7] => ~NO_FANOUT~
+counterspeedreg[8] => ~NO_FANOUT~
+counterspeedreg[9] => ~NO_FANOUT~
+counterspeedreg[10] => ~NO_FANOUT~
+counterspeedreg[11] => ~NO_FANOUT~
+clockdivided <= LessThan0.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |ServoController|PWM_gen:pwmgen
-clock => dutylatched[0].CLK
-clock => dutylatched[1].CLK
-clock => dutylatched[2].CLK
-clock => dutylatched[3].CLK
-clock => dutylatched[4].CLK
-clock => dutylatched[5].CLK
-clock => dutylatched[6].CLK
-clock => dutylatched[7].CLK
+clock => ~NO_FANOUT~
 clockdiv => counter[0].CLK
 clockdiv => counter[1].CLK
 clockdiv => counter[2].CLK
@@ -33,22 +52,34 @@ clockdiv => counter[8].CLK
 clockdiv => counter[9].CLK
 clockdiv => counter[10].CLK
 clockdiv => counter[11].CLK
-duty[0] => dutylatched[0].DATAIN
-duty[1] => dutylatched[1].DATAIN
-duty[2] => dutylatched[2].DATAIN
-duty[3] => dutylatched[3].DATAIN
-duty[4] => dutylatched[4].DATAIN
-duty[5] => dutylatched[5].DATAIN
-duty[6] => dutylatched[6].DATAIN
-duty[7] => dutylatched[7].DATAIN
-latch => dutylatched[0].ENA
-latch => dutylatched[1].ENA
-latch => dutylatched[2].ENA
-latch => dutylatched[3].ENA
-latch => dutylatched[4].ENA
-latch => dutylatched[5].ENA
-latch => dutylatched[6].ENA
-latch => dutylatched[7].ENA
+duty[0] => dutylatch[0].DATAIN
+duty[1] => dutylatch[1].DATAIN
+duty[2] => dutylatch[2].DATAIN
+duty[3] => dutylatch[3].DATAIN
+duty[4] => dutylatch[4].DATAIN
+duty[5] => dutylatch[5].DATAIN
+duty[6] => dutylatch[6].DATAIN
+duty[7] => dutylatch[7].DATAIN
+latch => dutylatch[0].CLK
+latch => dutylatch[1].CLK
+latch => dutylatch[2].CLK
+latch => dutylatch[3].CLK
+latch => dutylatch[4].CLK
+latch => dutylatch[5].CLK
+latch => dutylatch[6].CLK
+latch => dutylatch[7].CLK
+endcount[0] => Equal0.IN11
+endcount[1] => Equal0.IN10
+endcount[2] => Equal0.IN9
+endcount[3] => Equal0.IN8
+endcount[4] => Equal0.IN7
+endcount[5] => Equal0.IN6
+endcount[6] => Equal0.IN5
+endcount[7] => Equal0.IN4
+endcount[8] => Equal0.IN3
+endcount[9] => Equal0.IN2
+endcount[10] => Equal0.IN1
+endcount[11] => Equal0.IN0
 PWMOut <= LessThan0.DB_MAX_OUTPUT_PORT_TYPE
 
 

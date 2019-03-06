@@ -1,5 +1,5 @@
-Analysis & Synthesis report for ServoController
-Tue Mar 05 15:46:17 2019
+Analysis & Elaboration report for ServoController
+Wed Mar 06 12:00:39 2019
 Quartus Prime Version 17.1.1 Internal Build 593 12/11/2017 SJ Standard Edition
 
 
@@ -7,16 +7,13 @@ Quartus Prime Version 17.1.1 Internal Build 593 12/11/2017 SJ Standard Edition
 ; Table of Contents ;
 ---------------------
   1. Legal Notice
-  2. Analysis & Synthesis Summary
-  3. Analysis & Synthesis Settings
-  4. Parallel Compilation
-  5. Analysis & Synthesis Source Files Read
-  6. Analysis & Synthesis Resource Usage Summary
-  7. Analysis & Synthesis Resource Utilization by Entity
-  8. General Register Statistics
-  9. Post-Synthesis Netlist Statistics for Top Partition
- 10. Elapsed Time Per Partition
- 11. Analysis & Synthesis Messages
+  2. Analysis & Elaboration Summary
+  3. Parallel Compilation
+  4. Parameter Settings for User Entity Instance: clockDivider:clockdivider
+  5. Analysis & Elaboration Settings
+  6. Port Connectivity Checks: "PWM_gen:pwmgen"
+  7. Port Connectivity Checks: "clockDivider:clockdivider"
+  8. Analysis & Elaboration Messages
 
 
 
@@ -39,31 +36,52 @@ refer to the applicable agreement for further details.
 
 
 
-+--------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Summary                                                               ;
-+---------------------------------+----------------------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Tue Mar 05 15:46:16 2019                    ;
-; Quartus Prime Version           ; 17.1.1 Internal Build 593 12/11/2017 SJ Standard Edition ;
-; Revision Name                   ; ServoController                                          ;
-; Top-level Entity Name           ; ServoController                                          ;
-; Family                          ; Cyclone V                                                ;
-; Logic utilization (in ALMs)     ; N/A                                                      ;
-; Total registers                 ; 30                                                       ;
-; Total pins                      ; 11                                                       ;
-; Total virtual pins              ; 0                                                        ;
-; Total block memory bits         ; 0                                                        ;
-; Total DSP Blocks                ; 0                                                        ;
-; Total HSSI RX PCSs              ; 0                                                        ;
-; Total HSSI PMA RX Deserializers ; 0                                                        ;
-; Total HSSI TX PCSs              ; 0                                                        ;
-; Total HSSI PMA TX Serializers   ; 0                                                        ;
-; Total PLLs                      ; 0                                                        ;
-; Total DLLs                      ; 0                                                        ;
-+---------------------------------+----------------------------------------------------------+
++------------------------------------------------------------------------------------------+
+; Analysis & Elaboration Summary                                                           ;
++-------------------------------+----------------------------------------------------------+
+; Analysis & Elaboration Status ; Successful - Wed Mar 06 12:00:39 2019                    ;
+; Quartus Prime Version         ; 17.1.1 Internal Build 593 12/11/2017 SJ Standard Edition ;
+; Revision Name                 ; ServoController                                          ;
+; Top-level Entity Name         ; ServoController                                          ;
+; Family                        ; Cyclone V                                                ;
+; Logic utilization (in ALMs)   ; N/A until Partition Merge                                ;
+; Total registers               ; N/A until Partition Merge                                ;
+; Total pins                    ; N/A until Partition Merge                                ;
+; Total virtual pins            ; N/A until Partition Merge                                ;
+; Total block memory bits       ; N/A until Partition Merge                                ;
+; Total PLLs                    ; N/A until Partition Merge                                ;
+; Total DLLs                    ; N/A until Partition Merge                                ;
++-------------------------------+----------------------------------------------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 4           ;
+; Maximum allowed            ; 4           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
++----------------------------+-------------+
+
+
++------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: clockDivider:clockdivider ;
++----------------+-------+-----------------------------------------------+
+; Parameter Name ; Value ; Type                                          ;
++----------------+-------+-----------------------------------------------+
+; counterspeed   ; 390   ; Signed Integer                                ;
++----------------+-------+-----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
 +---------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Settings                                                                                             ;
+; Analysis & Elaboration Settings                                                                                           ;
 +---------------------------------------------------------------------------------+--------------------+--------------------+
 ; Option                                                                          ; Setting            ; Default Value      ;
 +---------------------------------------------------------------------------------+--------------------+--------------------+
@@ -149,152 +167,63 @@ refer to the applicable agreement for further details.
 +---------------------------------------------------------------------------------+--------------------+--------------------+
 
 
-+------------------------------------------+
-; Parallel Compilation                     ;
-+----------------------------+-------------+
-; Processors                 ; Number      ;
-+----------------------------+-------------+
-; Number detected on machine ; 4           ;
-; Maximum allowed            ; 4           ;
-;                            ;             ;
-; Average used               ; 1.00        ;
-; Maximum used               ; 4           ;
-;                            ;             ;
-; Usage by Processor         ; % Time Used ;
-;     Processor 1            ; 100.0%      ;
-;     Processors 2-4         ;   0.0%      ;
-+----------------------------+-------------+
++--------------------------------------------------+
+; Port Connectivity Checks: "PWM_gen:pwmgen"       ;
++----------------+-------+----------+--------------+
+; Port           ; Type  ; Severity ; Details      ;
++----------------+-------+----------+--------------+
+; endcount[8..0] ; Input ; Info     ; Stuck at GND ;
+; endcount[11]   ; Input ; Info     ; Stuck at VCC ;
+; endcount[10]   ; Input ; Info     ; Stuck at GND ;
+; endcount[9]    ; Input ; Info     ; Stuck at VCC ;
++----------------+-------+----------+--------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                            ;
-+----------------------------------+-----------------+------------------------+-----------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                              ; Library ;
-+----------------------------------+-----------------+------------------------+-----------------------------------------------------------+---------+
-; ServoController.v                ; yes             ; User Verilog HDL File  ; M:/MASTERS/FPGA/FPGA_WS/ServoController/ServoController.v ;         ;
-+----------------------------------+-----------------+------------------------+-----------------------------------------------------------+---------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "clockDivider:clockdivider"                                                                                                                                                                           ;
++------------------------+-------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port                   ; Type  ; Severity ; Details                                                                                                                                                                             ;
++------------------------+-------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; counterspeedreg        ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (12 bits) it drives.  The 20 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; counterspeedreg[8..7]  ; Input ; Info     ; Stuck at VCC                                                                                                                                                                        ;
+; counterspeedreg[2..1]  ; Input ; Info     ; Stuck at VCC                                                                                                                                                                        ;
+; counterspeedreg[11..9] ; Input ; Info     ; Stuck at GND                                                                                                                                                                        ;
+; counterspeedreg[6..3]  ; Input ; Info     ; Stuck at GND                                                                                                                                                                        ;
+; counterspeedreg[0]     ; Input ; Info     ; Stuck at GND                                                                                                                                                                        ;
++------------------------+-------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
-+-----------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary               ;
-+---------------------------------------------+-------------+
-; Resource                                    ; Usage       ;
-+---------------------------------------------+-------------+
-; Estimate of Logic utilization (ALMs needed) ; 23          ;
-;                                             ;             ;
-; Combinational ALUT usage for logic          ; 39          ;
-;     -- 7 input functions                    ; 0           ;
-;     -- 6 input functions                    ; 4           ;
-;     -- 5 input functions                    ; 5           ;
-;     -- 4 input functions                    ; 4           ;
-;     -- <=3 input functions                  ; 26          ;
-;                                             ;             ;
-; Dedicated logic registers                   ; 30          ;
-;                                             ;             ;
-; I/O pins                                    ; 11          ;
-;                                             ;             ;
-; Total DSP Blocks                            ; 0           ;
-;                                             ;             ;
-; Maximum fan-out node                        ; clock~input ;
-; Maximum fan-out                             ; 18          ;
-; Total fan-out                               ; 220         ;
-; Average fan-out                             ; 2.42        ;
-+---------------------------------------------+-------------+
-
-
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                    ;
-+----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------------------+-----------------+--------------+
-; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name             ; Entity Name     ; Library Name ;
-+----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------------------+-----------------+--------------+
-; |ServoController           ; 39 (15)             ; 30 (10)                   ; 0                 ; 0          ; 11   ; 0            ; |ServoController                ; ServoController ; work         ;
-;    |PWM_gen:pwmgen|        ; 24 (24)             ; 20 (20)                   ; 0                 ; 0          ; 0    ; 0            ; |ServoController|PWM_gen:pwmgen ; PWM_gen         ; work         ;
-+----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------------------+-----------------+--------------+
-Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
-
-
-+------------------------------------------------------+
-; General Register Statistics                          ;
-+----------------------------------------------+-------+
-; Statistic                                    ; Value ;
-+----------------------------------------------+-------+
-; Total registers                              ; 30    ;
-; Number of registers using Synchronous Clear  ; 22    ;
-; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 0     ;
-; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 8     ;
-; Number of registers using Preset             ; 0     ;
-+----------------------------------------------+-------+
-
-
-+-----------------------------------------------------+
-; Post-Synthesis Netlist Statistics for Top Partition ;
-+-----------------------+-----------------------------+
-; Type                  ; Count                       ;
-+-----------------------+-----------------------------+
-; arriav_ff             ; 30                          ;
-;     ENA               ; 8                           ;
-;     SCLR              ; 22                          ;
-; arriav_lcell_comb     ; 39                          ;
-;     arith             ; 22                          ;
-;         1 data inputs ; 22                          ;
-;     normal            ; 17                          ;
-;         2 data inputs ; 1                           ;
-;         3 data inputs ; 3                           ;
-;         4 data inputs ; 4                           ;
-;         5 data inputs ; 5                           ;
-;         6 data inputs ; 4                           ;
-; boundary_port         ; 11                          ;
-;                       ;                             ;
-; Max LUT depth         ; 3.00                        ;
-; Average LUT depth     ; 1.83                        ;
-+-----------------------+-----------------------------+
-
-
-+-------------------------------+
-; Elapsed Time Per Partition    ;
-+----------------+--------------+
-; Partition Name ; Elapsed Time ;
-+----------------+--------------+
-; Top            ; 00:00:00     ;
-+----------------+--------------+
-
-
-+-------------------------------+
-; Analysis & Synthesis Messages ;
-+-------------------------------+
++---------------------------------+
+; Analysis & Elaboration Messages ;
++---------------------------------+
 Info: *******************************************************************
-Info: Running Quartus Prime Analysis & Synthesis
+Info: Running Quartus Prime Analysis & Elaboration
     Info: Version 17.1.1 Internal Build 593 12/11/2017 SJ Standard Edition
-    Info: Processing started: Tue Mar 05 15:46:03 2019
-Info: Command: quartus_map --read_settings_files=on --write_settings_files=off ServoController -c ServoController
+    Info: Processing started: Wed Mar 06 12:00:16 2019
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off ServoController -c ServoController --analysis_and_elaboration
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file pwmgen.v
+    Info (12023): Found entity 1: PWM_gen File: M:/MASTERS/FPGA/Gitted/GittedAttempt2/ServoController/PWMGen.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file servocontrollertb.v
-    Info (12023): Found entity 1: ServoController_tb File: M:/MASTERS/FPGA/FPGA_WS/ServoController/ServoControllerTB.v Line: 6
-Info (12021): Found 0 design units, including 0 entities, in source file clockdivider.v
-Info (12021): Found 2 design units, including 2 entities, in source file servocontroller.v
-    Info (12023): Found entity 1: ServoController File: M:/MASTERS/FPGA/FPGA_WS/ServoController/ServoController.v Line: 1
-    Info (12023): Found entity 2: PWM_gen File: M:/MASTERS/FPGA/FPGA_WS/ServoController/ServoController.v Line: 34
+    Info (12023): Found entity 1: ServoController_tb File: M:/MASTERS/FPGA/Gitted/GittedAttempt2/ServoController/ServoControllerTB.v Line: 6
+Info (12021): Found 1 design units, including 1 entities, in source file clockdivider.v
+    Info (12023): Found entity 1: clockDivider File: M:/MASTERS/FPGA/Gitted/GittedAttempt2/ServoController/clockDivider.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file servocontroller.v
+    Info (12023): Found entity 1: ServoController File: M:/MASTERS/FPGA/Gitted/GittedAttempt2/ServoController/ServoController.v Line: 1
 Info (12127): Elaborating entity "ServoController" for the top level hierarchy
-Warning (10230): Verilog HDL assignment warning at ServoController.v(19): truncated value with size 32 to match size of target (10) File: M:/MASTERS/FPGA/FPGA_WS/ServoController/ServoController.v Line: 19
-Warning (10230): Verilog HDL assignment warning at ServoController.v(23): truncated value with size 32 to match size of target (1) File: M:/MASTERS/FPGA/FPGA_WS/ServoController/ServoController.v Line: 23
-Info (12128): Elaborating entity "PWM_gen" for hierarchy "PWM_gen:pwmgen" File: M:/MASTERS/FPGA/FPGA_WS/ServoController/ServoController.v Line: 31
-Warning (10036): Verilog HDL or VHDL warning at ServoController.v(41): object "reset" assigned a value but never read File: M:/MASTERS/FPGA/FPGA_WS/ServoController/ServoController.v Line: 41
-Warning (10230): Verilog HDL assignment warning at ServoController.v(60): truncated value with size 32 to match size of target (12) File: M:/MASTERS/FPGA/FPGA_WS/ServoController/ServoController.v Line: 60
-Warning (10230): Verilog HDL assignment warning at ServoController.v(64): truncated value with size 32 to match size of target (1) File: M:/MASTERS/FPGA/FPGA_WS/ServoController/ServoController.v Line: 64
-Info (286030): Timing-Driven Synthesis is running
-Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
-    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 58 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 10 input pins
-    Info (21059): Implemented 1 output pins
-    Info (21061): Implemented 47 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 6 warnings
-    Info: Peak virtual memory: 692 megabytes
-    Info: Processing ended: Tue Mar 05 15:46:17 2019
-    Info: Elapsed time: 00:00:14
+Info (12128): Elaborating entity "clockDivider" for hierarchy "clockDivider:clockdivider" File: M:/MASTERS/FPGA/Gitted/GittedAttempt2/ServoController/ServoController.v Line: 24
+Warning (10230): Verilog HDL assignment warning at clockDivider.v(20): truncated value with size 32 to match size of target (10) File: M:/MASTERS/FPGA/Gitted/GittedAttempt2/ServoController/clockDivider.v Line: 20
+Warning (10230): Verilog HDL assignment warning at clockDivider.v(24): truncated value with size 32 to match size of target (1) File: M:/MASTERS/FPGA/Gitted/GittedAttempt2/ServoController/clockDivider.v Line: 24
+Info (12128): Elaborating entity "PWM_gen" for hierarchy "PWM_gen:pwmgen" File: M:/MASTERS/FPGA/Gitted/GittedAttempt2/ServoController/ServoController.v Line: 33
+Warning (10036): Verilog HDL or VHDL warning at PWMGen.v(9): object "reset" assigned a value but never read File: M:/MASTERS/FPGA/Gitted/GittedAttempt2/ServoController/PWMGen.v Line: 9
+Warning (10230): Verilog HDL assignment warning at PWMGen.v(26): truncated value with size 32 to match size of target (12) File: M:/MASTERS/FPGA/Gitted/GittedAttempt2/ServoController/PWMGen.v Line: 26
+Warning (10230): Verilog HDL assignment warning at PWMGen.v(30): truncated value with size 32 to match size of target (1) File: M:/MASTERS/FPGA/Gitted/GittedAttempt2/ServoController/PWMGen.v Line: 30
+Warning (12241): 1 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Info: Quartus Prime Analysis & Elaboration was successful. 0 errors, 7 warnings
+    Info: Peak virtual memory: 632 megabytes
+    Info: Processing ended: Wed Mar 06 12:00:40 2019
+    Info: Elapsed time: 00:00:24
     Info: Total CPU time (on all processors): 00:00:24
 
 

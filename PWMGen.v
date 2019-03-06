@@ -1,13 +1,12 @@
 module PWM_gen(
-	input       clock,
-	input 		clockdiv,
-	input [7:0] duty,
-	input 		latch,
-	output      PWMOut
+	input       	clock,
+	input 			clockdiv,
+	input [7:0] 	duty,
+	input 			latch,
+	input	[11:0]	endcount,
+	output      	PWMOut
 );
 	reg 		   reset = 0;
-	localparam clockspeed = 128000
-	localparam endcount = clockspeed * 0.02; // 128khz * 0.02s as this is full scope of servo pwm
 	reg [7:0] dutylatch = 0;
 	
 	always @(posedge latch) begin

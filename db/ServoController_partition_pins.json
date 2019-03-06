@@ -12,10 +12,6 @@
 					"strict" : false
 				},
 				{
-					"name" : "clock",
-					"strict" : false
-				},
-				{
 					"name" : "load",
 					"strict" : false
 				},
@@ -45,6 +41,10 @@
 				},
 				{
 					"name" : "duty[4]",
+					"strict" : false
+				},
+				{
+					"name" : "clock",
 					"strict" : false
 				}
 			]
