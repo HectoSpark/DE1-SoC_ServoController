@@ -1,5 +1,4 @@
 module PWM_gen(
-	input       	clock,
 	input 			clockdiv,
 	input [7:0] 	duty,
 	input 			latch,
