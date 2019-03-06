@@ -16,8 +16,7 @@ module ServoController # (
 	localparam integer counterspeed = baseclock/clockspeed; 	//Calculate how much the counter must count for the clock.
 	
 	//calculations for PWMGen
-	localparam endcount = clockspeed * 0.02; 						//20ms * clockspeed to get the amount the counter must count for 20ms for the servo
-	reg [11:0]endcountreg = endcount;								//Put counter into register to pass to module
+	localparam integer endcount = clockspeed * 0.02; 						//20ms * clockspeed to get the amount the counter must count for 20ms for the servo
 	
 	//single clock divider for all 4 channels
 	clockDivider # (
@@ -31,12 +30,13 @@ module ServoController # (
 	genvar i;																//generate variable for the for loop
 	generate
 		for(i = 0; i < channels; i = i + 1) begin : PWMGen_Loops
-			PWM_gen pwmgen(
+			PWM_gen # (
+				.endcount	      (endcount)
+			) pwmgen(
 				.clockdiv 			(clockdiv),							//divided clock
 				.latch	 			(latch[i]),							//Latch of [i] channel
 				.duty		 			(duty),								//Duty input
-				.PWMOut	 			(PWMOut[i]),						//PWM out
-				.endcount 			(endcountreg)						//endcount paramter to pass through register
+				.PWMOut	 			(PWMOut[i]) 						//PWM out
 			);
 		end
 	endgenerate

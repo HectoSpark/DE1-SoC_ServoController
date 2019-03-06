@@ -56,6 +56,10 @@
 					"strict" : false
 				},
 				{
+					"name" : "clock",
+					"strict" : false
+				},
+				{
 					"name" : "latch[1]",
 					"strict" : false
 				},
@@ -65,10 +69,6 @@
 				},
 				{
 					"name" : "latch[3]",
-					"strict" : false
-				},
-				{
-					"name" : "clock",
 					"strict" : false
 				}
 			]

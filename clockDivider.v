@@ -3,7 +3,7 @@ module clockDivider # (
 	parameter counterspeed = 390 											//counterspeed parameter
 ) (
 input 			clock,														//Input clock
-output			clockdivided												//Output clock
+output reg  	clockdivided												//Output clock
 );
 
 	reg [9:0]counter = 0;													//counter register which initial is set to 0
@@ -20,6 +20,14 @@ output			clockdivided												//Output clock
 		end
 	end
 	
-	assign clockdivided = (counter < halfcounterspeed) ? 1 : 0; //assign block if counter is smaller than halfcounterspeed then clockdivided is 0, else 1
+	//assign clockdivided = (counter < halfcounterspeed) ? 1 : 0; 
+	
+	always @(posedge clock) begin											//assign block if counter is smaller than halfcounterspeed then clockdivided is 0, else 1
+		if(counter < halfcounterspeed) begin
+			clockdivided <= 1;
+		end else begin
+			clockdivided <= 0;
+		end
+	end
 
 endmodule

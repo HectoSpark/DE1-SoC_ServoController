@@ -1,5 +1,5 @@
 Analysis & Synthesis report for ServoController
-Wed Mar 06 12:54:08 2019
+Wed Mar 06 13:49:42 2019
 Quartus Prime Version 17.1.1 Internal Build 593 12/11/2017 SJ Standard Edition
 
 
@@ -17,14 +17,13 @@ Quartus Prime Version 17.1.1 Internal Build 593 12/11/2017 SJ Standard Edition
   9. General Register Statistics
  10. Parameter Settings for User Entity Instance: Top-level Entity: |ServoController
  11. Parameter Settings for User Entity Instance: clockDivider:clockdivider
- 12. Port Connectivity Checks: "PWM_gen:PWMGen_Loops[3].pwmgen"
- 13. Port Connectivity Checks: "PWM_gen:PWMGen_Loops[2].pwmgen"
- 14. Port Connectivity Checks: "PWM_gen:PWMGen_Loops[1].pwmgen"
- 15. Port Connectivity Checks: "PWM_gen:PWMGen_Loops[0].pwmgen"
- 16. Port Connectivity Checks: "clockDivider:clockdivider"
- 17. Post-Synthesis Netlist Statistics for Top Partition
- 18. Elapsed Time Per Partition
- 19. Analysis & Synthesis Messages
+ 12. Parameter Settings for User Entity Instance: PWM_gen:PWMGen_Loops[0].pwmgen
+ 13. Parameter Settings for User Entity Instance: PWM_gen:PWMGen_Loops[1].pwmgen
+ 14. Parameter Settings for User Entity Instance: PWM_gen:PWMGen_Loops[2].pwmgen
+ 15. Parameter Settings for User Entity Instance: PWM_gen:PWMGen_Loops[3].pwmgen
+ 16. Post-Synthesis Netlist Statistics for Top Partition
+ 17. Elapsed Time Per Partition
+ 18. Analysis & Synthesis Messages
 
 
 
@@ -50,13 +49,13 @@ refer to the applicable agreement for further details.
 +--------------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                               ;
 +---------------------------------+----------------------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Wed Mar 06 12:54:08 2019                    ;
+; Analysis & Synthesis Status     ; Successful - Wed Mar 06 13:49:42 2019                    ;
 ; Quartus Prime Version           ; 17.1.1 Internal Build 593 12/11/2017 SJ Standard Edition ;
 ; Revision Name                   ; ServoController                                          ;
 ; Top-level Entity Name           ; ServoController                                          ;
 ; Family                          ; Cyclone V                                                ;
 ; Logic utilization (in ALMs)     ; N/A                                                      ;
-; Total registers                 ; 54                                                       ;
+; Total registers                 ; 59                                                       ;
 ; Total pins                      ; 17                                                       ;
 ; Total virtual pins              ; 0                                                        ;
 ; Total block memory bits         ; 0                                                        ;
@@ -185,31 +184,31 @@ refer to the applicable agreement for further details.
 +----------------------------------+-----------------+------------------------+-------------------------------------------------------------------------+---------+
 
 
-+---------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary                                           ;
-+---------------------------------------------+-----------------------------------------+
-; Resource                                    ; Usage                                   ;
-+---------------------------------------------+-----------------------------------------+
-; Estimate of Logic utilization (ALMs needed) ; 41                                      ;
-;                                             ;                                         ;
-; Combinational ALUT usage for logic          ; 63                                      ;
-;     -- 7 input functions                    ; 0                                       ;
-;     -- 6 input functions                    ; 10                                      ;
-;     -- 5 input functions                    ; 11                                      ;
-;     -- 4 input functions                    ; 13                                      ;
-;     -- <=3 input functions                  ; 29                                      ;
-;                                             ;                                         ;
-; Dedicated logic registers                   ; 54                                      ;
-;                                             ;                                         ;
-; I/O pins                                    ; 17                                      ;
-;                                             ;                                         ;
-; Total DSP Blocks                            ; 0                                       ;
-;                                             ;                                         ;
-; Maximum fan-out node                        ; PWM_gen:PWMGen_Loops[0].pwmgen|Equal0~2 ;
-; Maximum fan-out                             ; 12                                      ;
-; Total fan-out                               ; 377                                     ;
-; Average fan-out                             ; 2.50                                    ;
-+---------------------------------------------+-----------------------------------------+
++--------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                                          ;
++---------------------------------------------+----------------------------------------+
+; Resource                                    ; Usage                                  ;
++---------------------------------------------+----------------------------------------+
+; Estimate of Logic utilization (ALMs needed) ; 41                                     ;
+;                                             ;                                        ;
+; Combinational ALUT usage for logic          ; 63                                     ;
+;     -- 7 input functions                    ; 0                                      ;
+;     -- 6 input functions                    ; 10                                     ;
+;     -- 5 input functions                    ; 11                                     ;
+;     -- 4 input functions                    ; 13                                     ;
+;     -- <=3 input functions                  ; 29                                     ;
+;                                             ;                                        ;
+; Dedicated logic registers                   ; 59                                     ;
+;                                             ;                                        ;
+; I/O pins                                    ; 17                                     ;
+;                                             ;                                        ;
+; Total DSP Blocks                            ; 0                                      ;
+;                                             ;                                        ;
+; Maximum fan-out node                        ; clockDivider:clockdivider|clockdivided ;
+; Maximum fan-out                             ; 16                                     ;
+; Total fan-out                               ; 387                                    ;
+; Average fan-out                             ; 2.48                                   ;
++---------------------------------------------+----------------------------------------+
 
 
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -217,12 +216,12 @@ refer to the applicable agreement for further details.
 +-------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-------------------------------------------------+-----------------+--------------+
 ; Compilation Hierarchy Node          ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                             ; Entity Name     ; Library Name ;
 +-------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-------------------------------------------------+-----------------+--------------+
-; |ServoController                    ; 63 (0)              ; 54 (0)                    ; 0                 ; 0          ; 17   ; 0            ; |ServoController                                ; ServoController ; work         ;
-;    |PWM_gen:PWMGen_Loops[0].pwmgen| ; 24 (24)             ; 20 (20)                   ; 0                 ; 0          ; 0    ; 0            ; |ServoController|PWM_gen:PWMGen_Loops[0].pwmgen ; PWM_gen         ; work         ;
-;    |PWM_gen:PWMGen_Loops[1].pwmgen| ; 8 (8)               ; 8 (8)                     ; 0                 ; 0          ; 0    ; 0            ; |ServoController|PWM_gen:PWMGen_Loops[1].pwmgen ; PWM_gen         ; work         ;
-;    |PWM_gen:PWMGen_Loops[2].pwmgen| ; 8 (8)               ; 8 (8)                     ; 0                 ; 0          ; 0    ; 0            ; |ServoController|PWM_gen:PWMGen_Loops[2].pwmgen ; PWM_gen         ; work         ;
-;    |PWM_gen:PWMGen_Loops[3].pwmgen| ; 8 (8)               ; 8 (8)                     ; 0                 ; 0          ; 0    ; 0            ; |ServoController|PWM_gen:PWMGen_Loops[3].pwmgen ; PWM_gen         ; work         ;
-;    |clockDivider:clockdivider|      ; 15 (15)             ; 10 (10)                   ; 0                 ; 0          ; 0    ; 0            ; |ServoController|clockDivider:clockdivider      ; clockDivider    ; work         ;
+; |ServoController                    ; 63 (0)              ; 59 (0)                    ; 0                 ; 0          ; 17   ; 0            ; |ServoController                                ; ServoController ; work         ;
+;    |PWM_gen:PWMGen_Loops[0].pwmgen| ; 24 (24)             ; 21 (21)                   ; 0                 ; 0          ; 0    ; 0            ; |ServoController|PWM_gen:PWMGen_Loops[0].pwmgen ; PWM_gen         ; work         ;
+;    |PWM_gen:PWMGen_Loops[1].pwmgen| ; 8 (8)               ; 9 (9)                     ; 0                 ; 0          ; 0    ; 0            ; |ServoController|PWM_gen:PWMGen_Loops[1].pwmgen ; PWM_gen         ; work         ;
+;    |PWM_gen:PWMGen_Loops[2].pwmgen| ; 8 (8)               ; 9 (9)                     ; 0                 ; 0          ; 0    ; 0            ; |ServoController|PWM_gen:PWMGen_Loops[2].pwmgen ; PWM_gen         ; work         ;
+;    |PWM_gen:PWMGen_Loops[3].pwmgen| ; 8 (8)               ; 9 (9)                     ; 0                 ; 0          ; 0    ; 0            ; |ServoController|PWM_gen:PWMGen_Loops[3].pwmgen ; PWM_gen         ; work         ;
+;    |clockDivider:clockdivider|      ; 15 (15)             ; 11 (11)                   ; 0                 ; 0          ; 0    ; 0            ; |ServoController|clockDivider:clockdivider      ; clockDivider    ; work         ;
 +-------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-------------------------------------------------+-----------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -277,7 +276,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 54    ;
+; Total registers                              ; 59    ;
 ; Number of registers using Synchronous Clear  ; 22    ;
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
@@ -307,66 +306,44 @@ Note: In order to hide this table in the UI and the text report file, please set
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+------------------------------------------------------------+
-; Port Connectivity Checks: "PWM_gen:PWMGen_Loops[3].pwmgen" ;
-+----------------+-------+----------+------------------------+
-; Port           ; Type  ; Severity ; Details                ;
-+----------------+-------+----------+------------------------+
-; endcount[8..0] ; Input ; Info     ; Stuck at GND           ;
-; endcount[11]   ; Input ; Info     ; Stuck at VCC           ;
-; endcount[10]   ; Input ; Info     ; Stuck at GND           ;
-; endcount[9]    ; Input ; Info     ; Stuck at VCC           ;
-+----------------+-------+----------+------------------------+
++-----------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: PWM_gen:PWMGen_Loops[0].pwmgen ;
++----------------+-------+----------------------------------------------------+
+; Parameter Name ; Value ; Type                                               ;
++----------------+-------+----------------------------------------------------+
+; endcount       ; 2560  ; Signed Integer                                     ;
++----------------+-------+----------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+------------------------------------------------------------+
-; Port Connectivity Checks: "PWM_gen:PWMGen_Loops[2].pwmgen" ;
-+----------------+-------+----------+------------------------+
-; Port           ; Type  ; Severity ; Details                ;
-+----------------+-------+----------+------------------------+
-; endcount[8..0] ; Input ; Info     ; Stuck at GND           ;
-; endcount[11]   ; Input ; Info     ; Stuck at VCC           ;
-; endcount[10]   ; Input ; Info     ; Stuck at GND           ;
-; endcount[9]    ; Input ; Info     ; Stuck at VCC           ;
-+----------------+-------+----------+------------------------+
++-----------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: PWM_gen:PWMGen_Loops[1].pwmgen ;
++----------------+-------+----------------------------------------------------+
+; Parameter Name ; Value ; Type                                               ;
++----------------+-------+----------------------------------------------------+
+; endcount       ; 2560  ; Signed Integer                                     ;
++----------------+-------+----------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+------------------------------------------------------------+
-; Port Connectivity Checks: "PWM_gen:PWMGen_Loops[1].pwmgen" ;
-+----------------+-------+----------+------------------------+
-; Port           ; Type  ; Severity ; Details                ;
-+----------------+-------+----------+------------------------+
-; endcount[8..0] ; Input ; Info     ; Stuck at GND           ;
-; endcount[11]   ; Input ; Info     ; Stuck at VCC           ;
-; endcount[10]   ; Input ; Info     ; Stuck at GND           ;
-; endcount[9]    ; Input ; Info     ; Stuck at VCC           ;
-+----------------+-------+----------+------------------------+
++-----------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: PWM_gen:PWMGen_Loops[2].pwmgen ;
++----------------+-------+----------------------------------------------------+
+; Parameter Name ; Value ; Type                                               ;
++----------------+-------+----------------------------------------------------+
+; endcount       ; 2560  ; Signed Integer                                     ;
++----------------+-------+----------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+------------------------------------------------------------+
-; Port Connectivity Checks: "PWM_gen:PWMGen_Loops[0].pwmgen" ;
-+----------------+-------+----------+------------------------+
-; Port           ; Type  ; Severity ; Details                ;
-+----------------+-------+----------+------------------------+
-; endcount[8..0] ; Input ; Info     ; Stuck at GND           ;
-; endcount[11]   ; Input ; Info     ; Stuck at VCC           ;
-; endcount[10]   ; Input ; Info     ; Stuck at GND           ;
-; endcount[9]    ; Input ; Info     ; Stuck at VCC           ;
-+----------------+-------+----------+------------------------+
-
-
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "clockDivider:clockdivider"                                                                                                                                                                           ;
-+------------------------+-------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port                   ; Type  ; Severity ; Details                                                                                                                                                                             ;
-+------------------------+-------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; counterspeedreg        ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (12 bits) it drives.  The 20 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
-; counterspeedreg[8..7]  ; Input ; Info     ; Stuck at VCC                                                                                                                                                                        ;
-; counterspeedreg[2..1]  ; Input ; Info     ; Stuck at VCC                                                                                                                                                                        ;
-; counterspeedreg[11..9] ; Input ; Info     ; Stuck at GND                                                                                                                                                                        ;
-; counterspeedreg[6..3]  ; Input ; Info     ; Stuck at GND                                                                                                                                                                        ;
-; counterspeedreg[0]     ; Input ; Info     ; Stuck at GND                                                                                                                                                                        ;
-+------------------------+-------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++-----------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: PWM_gen:PWMGen_Loops[3].pwmgen ;
++----------------+-------+----------------------------------------------------+
+; Parameter Name ; Value ; Type                                               ;
++----------------+-------+----------------------------------------------------+
+; endcount       ; 2560  ; Signed Integer                                     ;
++----------------+-------+----------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
 +-----------------------------------------------------+
@@ -374,9 +351,9 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; arriav_ff             ; 54                          ;
+; arriav_ff             ; 59                          ;
 ;     SCLR              ; 22                          ;
-;     plain             ; 32                          ;
+;     plain             ; 37                          ;
 ; arriav_lcell_comb     ; 63                          ;
 ;     arith             ; 22                          ;
 ;         1 data inputs ; 22                          ;
@@ -389,7 +366,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; boundary_port         ; 17                          ;
 ;                       ;                             ;
 ; Max LUT depth         ; 3.00                        ;
-; Average LUT depth     ; 2.07                        ;
+; Average LUT depth     ; 2.00                        ;
 +-----------------------+-----------------------------+
 
 
@@ -408,27 +385,24 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 17.1.1 Internal Build 593 12/11/2017 SJ Standard Edition
-    Info: Processing started: Wed Mar 06 12:53:55 2019
+    Info: Processing started: Wed Mar 06 13:49:30 2019
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off ServoController -c ServoController
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info (12021): Found 1 design units, including 1 entities, in source file pwmgen.v
-    Info (12023): Found entity 1: PWM_gen File: M:/MASTERS/FPGA/Gitted/GittedAttempt2/ServoController/PWMGen.v Line: 1
+    Info (12023): Found entity 1: PWM_gen File: M:/MASTERS/FPGA/Gitted/GittedAttempt2/ServoController/PWMGen.v Line: 2
 Info (12021): Found 1 design units, including 1 entities, in source file servocontrollertb.v
     Info (12023): Found entity 1: ServoController_tb File: M:/MASTERS/FPGA/Gitted/GittedAttempt2/ServoController/ServoControllerTB.v Line: 6
 Info (12021): Found 1 design units, including 1 entities, in source file clockdivider.v
-    Info (12023): Found entity 1: clockDivider File: M:/MASTERS/FPGA/Gitted/GittedAttempt2/ServoController/clockDivider.v Line: 1
+    Info (12023): Found entity 1: clockDivider File: M:/MASTERS/FPGA/Gitted/GittedAttempt2/ServoController/clockDivider.v Line: 2
 Info (12021): Found 1 design units, including 1 entities, in source file servocontroller.v
-    Info (12023): Found entity 1: ServoController File: M:/MASTERS/FPGA/Gitted/GittedAttempt2/ServoController/ServoController.v Line: 1
+    Info (12023): Found entity 1: ServoController File: M:/MASTERS/FPGA/Gitted/GittedAttempt2/ServoController/ServoController.v Line: 2
 Info (12127): Elaborating entity "ServoController" for the top level hierarchy
-Info (12128): Elaborating entity "clockDivider" for hierarchy "clockDivider:clockdivider" File: M:/MASTERS/FPGA/Gitted/GittedAttempt2/ServoController/ServoController.v Line: 28
-Warning (10230): Verilog HDL assignment warning at clockDivider.v(20): truncated value with size 32 to match size of target (10) File: M:/MASTERS/FPGA/Gitted/GittedAttempt2/ServoController/clockDivider.v Line: 20
-Warning (10230): Verilog HDL assignment warning at clockDivider.v(24): truncated value with size 32 to match size of target (1) File: M:/MASTERS/FPGA/Gitted/GittedAttempt2/ServoController/clockDivider.v Line: 24
+Info (12128): Elaborating entity "clockDivider" for hierarchy "clockDivider:clockdivider" File: M:/MASTERS/FPGA/Gitted/GittedAttempt2/ServoController/ServoController.v Line: 27
+Warning (10230): Verilog HDL assignment warning at clockDivider.v(19): truncated value with size 32 to match size of target (10) File: M:/MASTERS/FPGA/Gitted/GittedAttempt2/ServoController/clockDivider.v Line: 19
 Info (12128): Elaborating entity "PWM_gen" for hierarchy "PWM_gen:PWMGen_Loops[0].pwmgen" File: M:/MASTERS/FPGA/Gitted/GittedAttempt2/ServoController/ServoController.v Line: 40
-Warning (10036): Verilog HDL or VHDL warning at PWMGen.v(8): object "reset" assigned a value but never read File: M:/MASTERS/FPGA/Gitted/GittedAttempt2/ServoController/PWMGen.v Line: 8
-Warning (10230): Verilog HDL assignment warning at PWMGen.v(23): truncated value with size 32 to match size of target (12) File: M:/MASTERS/FPGA/Gitted/GittedAttempt2/ServoController/PWMGen.v Line: 23
-Warning (10230): Verilog HDL assignment warning at PWMGen.v(27): truncated value with size 32 to match size of target (1) File: M:/MASTERS/FPGA/Gitted/GittedAttempt2/ServoController/PWMGen.v Line: 27
-Warning (12241): 1 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Warning (10036): Verilog HDL or VHDL warning at PWMGen.v(10): object "reset" assigned a value but never read File: M:/MASTERS/FPGA/Gitted/GittedAttempt2/ServoController/PWMGen.v Line: 10
+Warning (10230): Verilog HDL assignment warning at PWMGen.v(25): truncated value with size 32 to match size of target (12) File: M:/MASTERS/FPGA/Gitted/GittedAttempt2/ServoController/PWMGen.v Line: 25
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
@@ -436,10 +410,10 @@ Info (21057): Implemented 112 device resources after synthesis - the final resou
     Info (21058): Implemented 13 input pins
     Info (21059): Implemented 4 output pins
     Info (21061): Implemented 95 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 7 warnings
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 4 warnings
     Info: Peak virtual memory: 692 megabytes
-    Info: Processing ended: Wed Mar 06 12:54:08 2019
-    Info: Elapsed time: 00:00:13
-    Info: Total CPU time (on all processors): 00:00:24
+    Info: Processing ended: Wed Mar 06 13:49:42 2019
+    Info: Elapsed time: 00:00:12
+    Info: Total CPU time (on all processors): 00:00:21
 
 

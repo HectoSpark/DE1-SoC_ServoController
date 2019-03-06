@@ -1,10 +1,11 @@
 /*--module to generate the PWM signal for the servo's--*/
-module PWM_gen(
+module PWM_gen # (
+	parameter endcount = 0
+) (
 	input 			clockdiv,										//Input divided clock signal (128kHz)
 	input [7:0] 	duty,												//Input duty cycle
 	input 			latch,											//Input latch
-	input	[11:0]	endcount,										//Input endcount for the counter
-	output      	PWMOut											//Ouput PWM signal for servos
+	output reg 		PWMOut											//Ouput PWM signal for servos
 );
 	reg 		   reset = 0;											//reset register
 	reg [7:0] Setduty = 0;											//Duty cycle which was set on the last latch
@@ -25,6 +26,15 @@ module PWM_gen(
 		end
 	end
 	
-	assign PWMOut = (counter < (64+Setduty)) ? 1 : 0;		//If counter is smaller than latched duty cycle then output is 1, else is 0
+	//assign PWMOut = (counter < (64+Setduty)) ? 1 : 0;		
+	
+	always@(posedge clockdiv) begin								//If counter is smaller than latched duty cycle then output is 1, else is 0
+	if(counter < (64+Setduty)) begin
+	PWMOut <= 1;
+	end else begin
+	PWMOut <= 0;
+	end
+	end
+
 		 
 endmodule
