@@ -27,7 +27,7 @@ initial begin
 	CLOCK = 1'b0;
 	latchbtn = 1;
 	
-	#30_000_000;
+	#60_000_000;
 	duty = 8'hFF;
 	channelselect = 2'b00;
 	latchbtn = 0;
@@ -38,17 +38,17 @@ initial begin
 	latchbtn = 0;
 	@(posedge CLOCK);
 	latchbtn = 1;
-	#90_000_000;
+	#60_000_000;
 	channelselect = 2'b10;
 	latchbtn = 0;
 	@(posedge CLOCK);
 	latchbtn = 1;
-	#120_000_000;
+	#60_000_000;
 	channelselect = 2'b11;
 	latchbtn = 0;
 	@(posedge CLOCK);
 	latchbtn = 1;
-	#160_000_000;
+	#60_000_000;
 	channelselect = 2'b11;
 	latchbtn = 0;
 	@(posedge CLOCK);

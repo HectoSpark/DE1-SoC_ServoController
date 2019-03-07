@@ -25,8 +25,7 @@ module PWM_gen # (
 		counter <= counter + 1;										//Else incremement counter
 		end
 	end
-	
-	//assign PWMOut = (counter < (64+Setduty)) ? 1 : 0;		
+			
 	
 	always@(posedge clockdiv) begin								//If counter is smaller than latched duty cycle then output is 1, else is 0
 	if(counter < (64+Setduty)) begin

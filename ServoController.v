@@ -29,7 +29,7 @@ module ServoController # (
 	clockDivider # (
 		.counterspeed(counterspeed) 									//counterspeed parameter to be passed to module for calculations
 	) clockdivider(
-		.clock				(clock),  									//Clock assignment for module							//counterspeed to for module
+		.clock				(clock),  									//Clock assignment for module							
 		.clockdivided		(clockdiv)									//the divided clock speed out
 	);
 	

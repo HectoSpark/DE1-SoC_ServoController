@@ -20,7 +20,6 @@ output reg  	clockdivided												//Output clock
 		end
 	end
 	
-	//assign clockdivided = (counter < halfcounterspeed) ? 1 : 0; 
 	
 	always @(posedge clock) begin											//assign block if counter is smaller than halfcounterspeed then clockdivided is 0, else 1
 		if(counter < halfcounterspeed) begin
