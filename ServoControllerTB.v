@@ -7,7 +7,7 @@ module ServoController_tb;
 
 	reg		 	CLOCK = 0;
 	reg  [7:0] 	duty = 8'h00;
-	reg  [2:0]  channelselect = 2'b00;
+	reg  [1:0]  channelselect = 2'b00;
 	reg  		 	latchbtn = 0;
 	wire [3:0]	PWMOut;
 	

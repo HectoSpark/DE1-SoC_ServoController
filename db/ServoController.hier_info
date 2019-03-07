@@ -14,10 +14,10 @@ latchbtn => latch.DATAB
 latchbtn => latch.DATAB
 latchbtn => latch.DATAB
 latchbtn => latch.DATAB
-PWMOut[0] << PWM_gen:PWMGen_Loops[0].pwmgen.PWMOut
-PWMOut[1] << PWM_gen:PWMGen_Loops[1].pwmgen.PWMOut
-PWMOut[2] << PWM_gen:PWMGen_Loops[2].pwmgen.PWMOut
-PWMOut[3] << PWM_gen:PWMGen_Loops[3].pwmgen.PWMOut
+PWMOut[0] <= PWM_gen:PWMGen_Loops[0].pwmgen.PWMOut
+PWMOut[1] <= PWM_gen:PWMGen_Loops[1].pwmgen.PWMOut
+PWMOut[2] <= PWM_gen:PWMGen_Loops[2].pwmgen.PWMOut
+PWMOut[3] <= PWM_gen:PWMGen_Loops[3].pwmgen.PWMOut
 
 
 |ServoController|clockDivider:clockdivider
